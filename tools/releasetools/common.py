@@ -523,9 +523,8 @@ def LoadRecoveryFSTab(read_helper, fstab_version, recovery_fstab_path,
         context = i
 
     mount_point = pieces[1]
-    if not d.get(mount_point):
-        d[mount_point] = Partition(mount_point=mount_point, fs_type=pieces[2],
-                                   device=pieces[0], length=length, context=context)
+    d[mount_point] = Partition(mount_point=mount_point, fs_type=pieces[2],
+                               device=pieces[0], length=length, context=context)
 
   global system_as_system
   system_as_system = True
